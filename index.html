@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example Music Downloader</title>
+  <style>
+           // iyi ndi style yokongolesa website
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .song-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 25px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .song-image {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 10px;
+  margin-left: auto;
+}
+    }
+    .song-title {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #444;
+    }
+    audio {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .downloadBtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .downloadBtn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎶 Nyimbo zomwe zilipo</h2>
+
+  <!-- Nyimbo 1 -->
+  <div class="song-card">
+   <img src="images/wanda.JPG" alt="Logo" class="song-image" />
+    <h3 class="song-title">🎵 Love Song</h3>
+    <audio controls>
+      <source src="music/zex2.mp3" type="audio/mpeg" />
+      Browser yanu siyithandiza audio.
+    </audio>
+    <button class="downloadBtn" onclick="downloadSong('music/zex2.mp3', 'Love Song')">📥 Downloader</button>
+  </div>
+
+
+  <!-- Nyimbo 2 -->
+  <div class="song-card">
+    <img src="images/zex1.png" alt="Maria" class="song-image" />
+    <h3 class="song-title">🎵 Usiku Wabwino</h3>
+    <audio controls>
+      <source src="music/usiku.mp3" type="audio/mpeg" />
+      Browser yanu siyithandiza audio.
+    </audio>
+    <button class="downloadBtn" onclick="downloadSong('music/usiku.mp3', 'Usiku Wabwino')">📥 Downloader</button>
+  </div>
+
+  <!-- Nyimbo 3 -->
+  <div class="song-card">
+    <img src="emages/banda.jpg" alt="Banda" class="song-image" />
+    <h3 class="song-title">🎵 Ndikufuna Kukonda</h3>
+    <audio controls>
+      <source src="music/kukonda.mp3" type="audio/mpeg" />
+      Browser yanu siyithandiza audio.
+    </audio>
+    <button class="downloadBtn" onclick="downloadSong('music/kukonda.mp3', 'Ndikufuna Kukonda')">📥 Downloader</button>
+  </div>
+  
+    <div class="song-card">
+   <img src="images/zex1.png" alt="Logo" class="song-image" />
+    <h3 class="song-title">🎵 Love Song</h3>
+    <audio controls>
+      <source src="music/zex2.mp3" type="audio/mpeg" />
+      Browser yanu siyithandiza audio.
+    </audio>
+    <button class="downloadBtn" onclick="downloadSong('music/zex2.mp3', 'Love Song')">📥 Downloader</button>
+  </div>
+
+  <script>
+    function downloadSong(filePath, songName) {
+      const link = document.createElement("a");
+      link.href = filePath;
+      link.download = songName + ".mp3";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
